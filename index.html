@@ -15,6 +15,24 @@
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://preprod-livechat.octopush.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'zVSUGymiGrvTreLE5rz95NUs',
+            baseUrl: BASE_URL,
+            locale: 'en'
+          })
+        }
+      })(document,"script");
+    </script>
+    
   <script>
     tailwind.config = {
       theme: {
@@ -179,27 +197,7 @@
     duration: 1,
     ease: "power3.out"
   });
-</script>
-
-
-    <script>
-      (function(d,t) {
-        var BASE_URL="https://livechat.octopush.com";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
-        g.defer = true;
-        g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
-          window.chatwootSDK.run({
-            websiteToken: 'JCsMkHuZ5dpWWSLt5u72YRZu',
-            baseUrl: BASE_URL,
-            locale: 'en'
-          })
-        }
-      })(document,"script");
-    </script>
-    
+</script>   
     
 </body>
 </html>
