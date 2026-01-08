@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maison Noir Atelier — Paris</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          colors: {
+            gold: '#BFA36F'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gold-underline {
+      position: relative;
+    }
+    .gold-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: #BFA36F;
+      transition: width 0.4s ease;
+    }
+    .gold-underline:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0B0B0B] text-white font-sans overflow-x-hidden">
+
+<!-- HERO -->
+<section class="min-h-screen grid md:grid-cols-2">
+  <div class="flex flex-col justify-center px-12 md:px-24 hero-text">
+    <p class="text-gold tracking-[0.35em] text-sm mb-6">
+      PARIS • ATELIER
+    </p>
+
+    <h1 class="font-serif text-6xl md:text-7xl leading-tight mb-8">
+      MAISON<br>NOIR
+    </h1>
+
+    <p class="text-gray-400 max-w-md mb-10">
+      Couture menswear crafted for men
+      who command silence and presence.
+    </p>
+
+    <button class="relative overflow-hidden border border-gold px-10 py-3 text-gold group">
+      <span class="absolute inset-0 bg-gold translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></span>
+      <span class="relative group-hover:text-black transition">Speak to a Stylist</span>
+    </button>
+  </div>
+
+  <div class="relative hero-image overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+      class="w-full h-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+    />
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="py-32 text-center manifesto">
+  <h2 class="font-serif text-4xl md:text-5xl max-w-4xl mx-auto">
+    “Luxury is not loud.  
+    It is precise.”
+  </h2>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="py-24 max-w-6xl mx-auto px-8 collections">
+  <div class="grid md:grid-cols-3 gap-16">
+    <div>
+      <h3 class="font-serif text-2xl mb-3 gold-underline">SUITS</h3>
+      <p class="text-gray-400">Architected for authority.</p>
+    </div>
+    <div>
+      <h3 class="font-serif text-2xl mb-3 gold-underline">OUTERWEAR</h3>
+      <p class="text-gray-400">Parisian structure and flow.</p>
+    </div>
+    <div>
+      <h3 class="font-serif text-2xl mb-3 gold-underline">ACCESSORIES</h3>
+      <p class="text-gray-400">Minimal. Intentional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE CHAT -->
+<section class="py-32 bg-[#111] text-center livechat">
+  <h2 class="font-serif text-4xl mb-6">
+    A Personal Stylist — In Real Time
+  </h2>
+  <p class="text-gray-400 max-w-xl mx-auto">
+    Speak directly with our Paris atelier via live chat.
+    Refined service, without waiting.
+  </p>
+</section>
+
+<footer class="py-12 text-center text-gray-500 text-sm">
+  © 2026 MAISON NOIR ATELIER — PARIS
+</footer>
+
+<!-- LIVE CHAT WIDGET -->
+<!-- <script src="YOUR_WIDGET.js"></script> -->
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".hero-text > *", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    stagger: 0.15,
+    ease: "power3.out"
+  });
+
+  gsap.from(".hero-image", {
+    scale: 1.1,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out"
+  });
+
+  gsap.from(".manifesto", {
+    scrollTrigger: {
+      trigger: ".manifesto",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 60,
+    duration: 1.2,
+    ease: "power3.out"
+  });
+
+  gsap.from(".collections > div > div", {
+    scrollTrigger: {
+      trigger: ".collections",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 40,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  gsap.from(".livechat", {
+    scrollTrigger: {
+      trigger: ".livechat",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 60,
+    duration: 1,
+    ease: "power3.out"
+  });
+</script>
+
+</body>
+</html>
