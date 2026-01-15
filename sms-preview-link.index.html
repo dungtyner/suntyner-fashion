@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- <meta charset="UTF-8" />
-  <title>Image</title>
+  <meta charset="UTF-8" />
 
   <!-- Basic -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Tap to view the image" />
 
-  <!-- ===== Open Graph (CRITICAL for preview) ===== -->
+  <!-- ===== Open Graph (CRITICAL for iOS / iMessage / SMS) ===== -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Image" />
   <meta property="og:description" content="Tap to view the image" />
-  <meta property="og:site_name" content="Tom Fashion" />
-  <meta property="og:url" content="https://tom-fashion.vercel.app/?ios=1" />
+  <meta property="og:url" content="https://tom-fashion.vercel.app/share/image" />
+  <link rel="canonical" href="https://tom-fashion.vercel.app/share/image" />
+
   <meta
     property="og:image"
-    content="https://tom-fashion.vercel.app/logo-min.jpeg"
+    content="https://www.apple.com/v/iphone/home/t/images/home/og.png?201610171354"
   />
+  <meta
+    property="og:image:secure_url"
+    content="https://www.apple.com/v/iphone/home/t/images/home/og.png?201610171354"
+  />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- ===== Twitter / iMessage / SMS fallback ===== -->
+  <!-- ===== Twitter / iMessage fallback ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Image" />
   <meta name="twitter:description" content="Tap to view the image" />
   <meta
     name="twitter:image"
-    content="https://tom-fashion.vercel.app/logo-min.jpeg"
-  /> -->
-
-  <meta property="og:type" content="website" />
-<meta property="og:title" content="Image" />
-<meta property="og:description" content="Tap to view the image" />
-<meta property="og:url" content="https://tom-fashion.vercel.app/share/image" />
-<link rel="canonical" href="https://tom-fashion.vercel.app/share/image" />
-
-<meta property="og:image" content="https://tom-fashion.vercel.app/logo-min.jpeg" />
-<meta property="og:image:secure_url" content="https://tom-fashion.vercel.app/logo-min.jpeg" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Image" />
-<meta name="twitter:description" content="Tap to view the image" />
-<meta name="twitter:image" content="https://tom-fashion.vercel.app/logo-min.jpeg" />
+    content="https://www.apple.com/v/iphone/home/t/images/home/og.png?201610171354"
+  />
 
   <!-- Minimal style -->
   <style>
@@ -64,16 +52,13 @@
 </head>
 
 <body>
-  <!-- 
-    ⚠️ iOS REQUIREMENT:
-    Hidden text nodes to force rich preview rendering
-  -->
+  <!-- iOS hidden text (important for preview reliability) -->
   <h1 style="display:none">Image</h1>
   <p style="display:none">Tap to view the image</p>
 
   <!-- Visible image -->
   <img
-    src="https://tom-fashion.vercel.app/logo-min.jpeg"
+    src="https://www.apple.com/v/iphone/home/t/images/home/og.png?201610171354"
     alt="Image"
   />
 </body>
